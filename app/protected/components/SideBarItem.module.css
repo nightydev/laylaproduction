@@ -1,0 +1,7 @@
+.link {
+  @apply flex items-center p-2 text-gray-600 rounded-lg hover:bg-gray-600 hover:text-white;
+ }
+ 
+ .active-link {
+   @apply bg-gray-800 text-white;
+ }
