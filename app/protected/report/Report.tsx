@@ -34,7 +34,7 @@ export default function Report() {
 
 
 
-  const justifyText = (doc: jsPDF, text: string, x: number, y: number, maxWidth: number, lineHeight: number, logo1, logo2, imgHeight2, imgWidth2, entry, imgWidth1, imgHeight1) => {
+  const justifyText = (doc: jsPDF, text: string, x: number, y: number, maxWidth: number, lineHeight: number, logo1: any, logo2: any, imgHeight2: any, imgWidth2: any, entry: any, imgWidth1: any, imgHeight1: any) => {
     const words = text.split(' ');
     let line = '';
     let lines = [];
