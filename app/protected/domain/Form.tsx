@@ -238,30 +238,30 @@ const CedulaSearch = () => {
     doc.text('Tomo:', 155, 120)
 
     doc.setFont('times', 'normal');
-    justifyText(doc, record.fechainscripcion, 36, 120, 190, 4)
+    justifyText(doc, record.fechainscripcion ?? '', 36, 120, 190, 4)
     justifyText(doc, record.noinscripcion, 43, 125, 190, 4)
-    justifyText(doc, record.notaria, 60, 130, 190, 4)
-    justifyText(doc, record.fechaotorgamiento, 87, 135, 190, 4)
+    justifyText(doc, record.notaria ?? '', 60, 130, 190, 4)
+    justifyText(doc, record.fechaotorgamiento ?? '', 87, 135, 190, 4)
 
-    justifyText(doc, record.folio, 124, 120, 190, 4)
-    justifyText(doc, record.norepertorio, 138, 125, 190, 4)
-    justifyText(doc, record.tomo, 165, 120, 190, 4)
+    justifyText(doc, record.folio ?? '', 124, 120, 190, 4)
+    justifyText(doc, record.norepertorio ?? '', 138, 125, 190, 4)
+    justifyText(doc, record.tomo ?? '', 165, 120, 190, 4)
 
 
     doc.setFont('times', 'bold');
     doc.text('3.- UBICACIÓN:', 20, 150)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.ubicacion, 20, 155, 170, 4);
+    justifyText(doc, record.ubicacion ?? '', 20, 155, 170, 4);
 
     doc.setFont('times', 'bold');
     doc.text('4.- HISTORIA:', 20, 165)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.historia, 20, 170, 170, 4);
+    justifyText(doc, record.historia ?? '', 20, 170, 170, 4);
 
     doc.setFont('times', 'bold');
     doc.text('5.- LINDEROS Y MEDIDAS:', 20, 215)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.linderos, 20, 220, 170, 4);
+    justifyText(doc, record.linderos ?? '', 20, 220, 170, 4);
 
     doc.addPage();
     doc.addImage(logo1, 'PNG', 10, 0, imgWidth1, imgHeight1);
@@ -270,17 +270,17 @@ const CedulaSearch = () => {
     doc.setFont('times', 'bold');
     doc.text('6.- OBSERVACIONES:', 20, 45)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.observaciones, 20, 50, 170, 4);
+    justifyText(doc, record.observaciones ?? '', 20, 50, 170, 4);
 
     doc.setFont('times', 'bold');
     doc.text('7.- SOLVENCIA:', 20, 65)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.solvencia, 20, 70, 170, 4);
+    justifyText(doc, record.solvencia ?? '', 20, 70, 170, 4);
 
     doc.setFont('times', 'bold');
     doc.text('8.- RAZÓN:', 20, 85)
     doc.setFont('times', 'normal');
-    justifyText(doc, record.razon, 20, 90, 170, 4);
+    justifyText(doc, record.razon ?? '', 20, 90, 170, 4);
 
 
 
@@ -296,8 +296,8 @@ const CedulaSearch = () => {
     doc.text(formattedDate, dateX, 170);
 
     doc.setFontSize(10);
-    const regNameX = (doc.internal.pageSize.getWidth() - doc.getTextWidth(record.registrador.toUpperCase())) / 2;
-    doc.text(record.registrador.toUpperCase(), regNameX, 200);
+    const regNameX = (doc.internal.pageSize.getWidth() - doc.getTextWidth(record.registrador ?? ''.toUpperCase())) / 2;
+    doc.text(record.registrador ?? ''.toUpperCase(), regNameX, 200);
 
     const regTitle = 'REGISTRADOR/A DE LA PROPIEDAD Y MERCANTIL DEL CANTÓN SUCRE';
     const regTitleX = (doc.internal.pageSize.getWidth() - doc.getTextWidth(regTitle)) / 2;
