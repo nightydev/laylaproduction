@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import { supabase } from '@/utils/supabase/server-client';
 import jsPDF from 'jspdf';
 import axios from 'axios';
+import Link from 'next/link';
 
 function getMonthName(monthIndex: any) {
   const months = [
@@ -371,12 +372,21 @@ const CedulaSearch = () => {
                     Editar
                   </button>
 
+                  <Link
+                    target='_blank'
+                    href={`../doc/${item.id}`}
+                    className="ml-2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
+                  >
+                    Ver
+                  </Link>
+
                   <button
                     onClick={() => handleDownload(item)}
                     className="ml-2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
                   >
                     Descargar
                   </button>
+
                 </td>
               </tr>
             ))}
