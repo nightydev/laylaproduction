@@ -83,6 +83,7 @@ const CedulaSearch = () => {
       const { data, error } = await supabase
         .from('historiadominio')
         .update({
+          fechaemision: selectedRecord.fechaemision,
           historia: selectedRecord.historia,
           linderos: selectedRecord.linderos,
           observaciones: selectedRecord.observaciones,
@@ -407,6 +408,13 @@ const CedulaSearch = () => {
         {selectedRecord && (
           <div>
             <h2 className="text-xl font-bold mb-4">Editar Registro</h2>
+            <label className="block text-sm font-medium text-gray-700">Fecha Emisión</label>
+            <input
+              type='date'
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              value={selectedRecord.fechaemision}
+              onChange={(e) => setSelectedRecord({ ...selectedRecord, fechaemision: e.target.value })}
+            />
             <label className="block text-sm font-medium text-gray-700">Historia</label>
             <textarea
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
