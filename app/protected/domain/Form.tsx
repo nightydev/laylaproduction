@@ -380,12 +380,12 @@ const CedulaSearch = () => {
                     Ver
                   </Link>
 
-                  <button
+                  {/** <button
                     onClick={() => handleDownload(item)}
                     className="ml-2 px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
                   >
                     Descargar
-                  </button>
+                  </button> **/}
 
                 </td>
               </tr>

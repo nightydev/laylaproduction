@@ -37,7 +37,7 @@ function formatearFecha(fecha: any) {
   return `${dia} de ${mes} del ${año}`;
 }
 
-export default async function docPage({ params }: { params: { id: string } }) {
+export default async function doc2Page({ params }: { params: { id: string } }) {
   const supabase = createClient();
 
   const { data, error } = await supabase
@@ -115,7 +115,7 @@ export default async function docPage({ params }: { params: { id: string } }) {
 
         <section className="mb-6">
           <h2 className="font-bold uppercase">3.- Ubicación:</h2>
-          <p className="mt-2 mb-4 text-justify">{historia.ubicacion}</p>
+          <p className="mt-2 mb-4">{historia.ubicacion}</p>
         </section>
 
         <section className="mb-6">
@@ -130,17 +130,17 @@ export default async function docPage({ params }: { params: { id: string } }) {
 
         <section className="mb-6">
           <h2 className="font-bold uppercase">6.- Observaciones:</h2>
-          <p className="mt-2 mb-4 text-justify">{historia.observaciones}</p>
+          <p className="mt-2 mb-4">{historia.observaciones}</p>
         </section>
 
         <section className="mb-6">
           <h2 className="font-bold uppercase">7.- Solvencia:</h2>
-          <p className="mt-2 text-justify">{historia.solvencia}</p>
+          <p className="mt-2">{historia.solvencia}</p>
         </section>
 
         <section className="mb-6">
           <h2 className="font-bold uppercase">8.- Razón:</h2>
-          <p className="mt-2 text-justify">{historia.razon}</p>
+          <p className="mt-2">{historia.razon}</p>
         </section>
 
         <footer className="mt-10">
